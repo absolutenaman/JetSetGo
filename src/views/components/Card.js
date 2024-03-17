@@ -14,7 +14,7 @@ import COLORS from "../../consts/colors";
 const { width } = Dimensions.get("screen");
 const cardWidth = width - 20;
 
-const Card = ({ food, navigation }) => {
+const Card = ({ flight, navigation }) => {
   const airlineImages = {
     IndiGo: require("../../assets/indiGo.png"),
     "Air India": require("../../assets/airIndia.png"),
@@ -23,34 +23,35 @@ const Card = ({ food, navigation }) => {
     GoAir: require("../../assets/goair.png"),
     AirAsia: require("../../assets/airasia.png"),
   };
-  const departureTime = food.departureTime.slice(-8, food.arrivalTime.length);
+  const departureTime = flight.departureTime.slice(-8, flight.arrivalTime.length);
   return (
     <TouchableHighlight
       underlayColor={COLORS.white}
       activeOpacity={0.9}
-      onPress={() => navigation.navigate("DetailsScreen",food)}
+      
     >
       <View style={style.card}>
         <View style={{ alignItems: "center" }}>
           <Image
-            source={airlineImages[food.airline]}
+            source={airlineImages[flight.airline]}
             style={{ height: 120, width: "100%" }}
+            testID="airline-logo"
           />
         </View>
         <View style={{ marginHorizontal: 20 }}>
           <Text
             style={{ fontSize: 18, fontWeight: "bold", color: COLORS.primary }}
           >
-            {food.airline}
+            {flight.airline}
           </Text>
           <Text style={{ fontSize: 14, color: COLORS.dark, marginTop: 2 }}>
-            {"Duration " + food.duration}
+            {"Duration " + flight.duration}
           </Text>
           <Text style={{ fontSize: 14, color: COLORS.grey, marginTop: 2 }}>
             {"Departure Time " + departureTime.slice(0, 5)}
           </Text>
           <Text style={{ fontSize: 14, color: COLORS.grey, marginTop: 2 }}>
-            {"Seats Available " + food.seatsAvailable}
+            {"Seats Available " + flight.seatsAvailable}
           </Text>
         </View>
 
@@ -63,7 +64,7 @@ const Card = ({ food, navigation }) => {
           }}
         >
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-            ${food.price}
+            ${flight.price}
           </Text>
          
         </View>

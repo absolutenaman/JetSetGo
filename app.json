@@ -4,10 +4,8 @@
     "slug": "JestSetGo",
     "version": "1.0.0",
     "orientation": "portrait",
-    // "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,14 +15,13 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+    "extra": {
+      "eas": {
+        "projectId": "cafe747b-a776-4454-b920-eb89775fd559"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.absolute.naman.JestSetGo"
     }
   }
 }

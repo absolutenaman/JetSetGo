@@ -160,6 +160,7 @@ return customToLocaleDateString(date);
             <DateTimePickerModal
               isVisible={isDatePickerVisible}
               mode="date"
+              testID="modal"
               onConfirm={handleConfirm}
               onCancel={hideDatePicker}
             />
@@ -198,7 +199,7 @@ return customToLocaleDateString(date);
           showsVerticalScrollIndicator={false}
           data={flightResult}
           renderItem={({ item }) => (
-            <Card food={item} navigation={navigation} />
+            <Card flight={item} navigation={navigation} testID="flights"/>
           )}
         />
       </ScrollView>
